@@ -2,7 +2,7 @@
 $q = $_GET['q'];
 require_once('../simplepie/autoloader.php');
 $feed = new SimplePie();
-$feed->set_feed_url("https://nitter.net/search/rss?f=tweets&q=@abidnev+$q");
+$feed->set_feed_url("https://nitter.bihlink.com/search/rss?f=tweets&q=@abidnev+$q");
 $feed->set_cache_location("../cache");
 // Run SimplePie //
 $feed->init();
