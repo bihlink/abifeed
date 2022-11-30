@@ -1,5 +1,5 @@
 <?php
-require_once('simplepie/autoloader.php');
+require_once('SimplePie.php');
 $feed = new SimplePie();
 $feed->set_feed_url("https://nitter.bihlink.com/abidnev/rss");
 $feed->set_cache_location("cache");
