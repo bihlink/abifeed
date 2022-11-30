@@ -1,11 +1,13 @@
 <?php
-include_once('SimplePie.php');
-$feed = new SimplePie();
-$feed->set_feed_url("https://nitter.bihlink.com/abidnev/rss");
-$feed->set_cache_location("cache");
+//include_once('SimplePie.php');
+//$feed = new SimplePie();
+//$feed->set_feed_url("https://nitter.bihlink.com/abidnev/rss");
+//$feed->set_cache_location("cache");
+
 // Run SimplePie //
-$feed->init();
-$feed->handle_content_type();
+
+//$feed->init();
+//$feed->handle_content_type();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,33 +70,17 @@ $feed->handle_content_type();
 
 	<div class="row row-cols-1 row-cols-md-2 g-3">
 		<?php
-		foreach ($feed->get_items() as $item):
-			$desc = $item->get_description();
-			$desc = str_replace('piped.kavin.rocks', 'tuby.me', $desc);
-			$desc = str_replace('https://nitter.bihlink.com/search', 'search/', $desc);
-			//$desc = str_replace('q=%23', 'q=', $desc);
-			$desc = str_replace('a href', 'a target="_blank" href', $desc);
-			$desc = str_replace('<img', '<img class="twimg"', $desc);
+		include_once 'Rss_Item.php';
+		include_once 'Rss_Parser.php';
+
+		$rss = new Rss_Parser();
+		$rss->load('http://feeds.feedburner.com/tweakers/mixed');
+
+		foreach($rss->getItems() as $item){
+			echo '<a href="'.$item->getLink().'">'.$item->getTitle().'</a><br />';
+		}
 		?>
 
-			<div class="col">
-				<div class="card">
-				<div class="card-body">
-					<h5 class="card-title"><?php echo $item->get_title(); ?></h5>
-					<p class="card-text"><?php echo $desc; ?></p>
-				</div>
-				<div class="card-footer">
-					<?php
-					$twlink = $item->get_permalink();
-					$twlink = str_replace('twitter.com', 'nitter.bihlink.com', $twlink)
-					?>
-					<a href="<?php echo $twlink; ?>" target="_blank" rel="nofollow noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a> 
-					<small class="text-muted"><?php echo $item->get_date('j F Y | g:i a'); ?></small>
-				</div>
-				</div>
-			</div>
-
-		<?php endforeach; ?>
 	</div>
 </div> 
 <?php include 'inc/footer.php'; ?>
