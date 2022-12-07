@@ -17,7 +17,7 @@
           <a class="nav-link" href="https://seolads.com"><i class="bi bi-star"></i> My Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.trendsmap.com/twitter/user/abidnev" target="_blank" rel="nofollow"><i class="bi bi-bar-chart-fill"></i> Stats</a>
+          <a class="nav-link" href="https://microblog.club">Microblog</a>
         </li>
       </ul>
       <form class="d-flex" action="https://twitter.xabid.com/search/">
