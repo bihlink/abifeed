@@ -28,7 +28,7 @@
         <label><input type="checkbox" id="lightSwitch"><span class="label" title="Switch Light Mode"><i class="bi bi-brightness-high-fill"></i></span></label>
         <script src="https://tuby.me/inc/lightswitch.js"></script>
       </div>
-      <!--<a class="btn btn-warning ms-md-3" href="#" role="button">Submit Video</a>-->
+      <!-- -<a class="btn btn-warning ms-md-3" href="#" role="button">Submit Video</a>-->
     </div>
   </div>
 </nav>
